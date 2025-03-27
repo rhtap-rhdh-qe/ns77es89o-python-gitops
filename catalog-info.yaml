@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ns77es89o-python-gitops
+  description: This is GitOps manifest for ns77es89o-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ns77es89o-python
+    backstage.io/kubernetes-id: ns77es89o-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ns77es89o-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ns77es89o-python
